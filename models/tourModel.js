@@ -140,10 +140,10 @@ tourSchema.virtual('reviews', {
 //   next();
 // });
 
-// tourSchema.pre('save', function (next) {
-//   this.slug = slugify(this.name, { lower: true });
-//   next();
-// });
+tourSchema.pre('save', function (next) {
+  this.slug = slugify(this.name, { lower: true });
+  next();
+});
 
 // tourSchema.pre('save', function (next) {
 //   console.log('Will save document');
